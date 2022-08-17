@@ -17,7 +17,7 @@ unsubscribed_button = InlineKeyboardMarkup(row_width=1).add(
     InlineKeyboardButton(text='Отписался', callback_data='unsubscribed'))
 
 link_to_group = InlineKeyboardMarkup(row_width=1).add(
-    InlineKeyboardButton(text='Перейти в чат', url="https://t.me/+TdH6YUsmC-wyNDQy")
+    InlineKeyboardButton(text='Перейти в чат', url="https://t.me/+Ko_B8Ua5j6g4NGJi")
 )
 
 
