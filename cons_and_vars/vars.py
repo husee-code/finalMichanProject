@@ -5,19 +5,19 @@ users_to_ban = set()
 gandoniy_chat = -603273110
 zaebis_chat = -1001669569045
 
-with open(os.path.abspath(r'black_list\permanent.json')) as js:
+with open(os.path.abspath(r'black_list/permanent.json')) as js:
     black_list: set = set(json.load(js))
 
 users_to_kick = set()
 
 
 def get_users_to_kick():
-    with open(os.path.abspath(r"black_list\users_to_kick.json"), encoding='utf-8') as js:
+    with open(os.path.abspath(r"black_list/users_to_kick.json"), encoding='utf-8') as js:
         return set(json.load(js))
 
 
 def update_users_to_kick(new_list):
-    with open(os.path.abspath(r"black_list\users_to_kick.json"), 'w', encoding='utf-8') as js:
+    with open(os.path.abspath(r"black_list/users_to_kick.json"), 'w', encoding='utf-8') as js:
         json.dump(new_list, js)
 
 
@@ -27,5 +27,5 @@ def update_users_to_kick(new_list):
 #         gandoniy_dict[chat_name] = set(json.load(js))
 
 
-with open(os.path.abspath(r"cons_and_vars\texts.json"), encoding='utf-8') as js:
+with open(os.path.abspath(r"cons_and_vars/texts.json"), encoding='utf-8') as js:
     texts = json.load(js)
