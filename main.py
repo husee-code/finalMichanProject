@@ -35,7 +35,7 @@ async def kick_pidors(client_nash: TelegramClient, pidor_client: TelegramClient,
 
 if __name__ == "__main__":
     config = configparser.ConfigParser()
-    config.read(r"D:\finalMihanProject\settings.ini")
+    config.read(os.path.abspath("finalMichanProject/settings.ini"))
     api_id, api_hash = int(config["userbot"]["api_id"]), config["userbot"]["api_hash"]
     bot_key = config["bot"]["bot_key"]
     client_nash = TelegramClient('our_userbot', api_id, api_hash)
