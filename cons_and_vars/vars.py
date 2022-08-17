@@ -2,8 +2,8 @@ import os
 import json
 
 users_to_ban = set()
-gandoniy_chat = -603273110
-zaebis_chat = -1001669569045
+gandoniy_chat = -1001793693961
+zaebis_chat = -1001770854928
 
 with open(os.path.abspath(r'finalMichanProject/black_list/permanent.json')) as js:
     black_list: set = set(json.load(js))
