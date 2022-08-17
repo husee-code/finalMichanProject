@@ -26,6 +26,7 @@ async def kick_pidors(client_nash: TelegramClient, pidor_client: TelegramClient,
     print(f'{pidors = }')
     update_users_to_kick(list(pidors))
     gandoni = ours & pidors
+    print(f'found {len(gandoni)} gandonov')
     for gandon in gandoni:
         with suppress(CantRestrictChatOwner):
             await kick_member(zaebis_chat, gandon, bot, send_message=False)
