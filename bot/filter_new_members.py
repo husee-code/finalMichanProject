@@ -45,7 +45,9 @@ def register_new_participant_handler(dp: Dispatcher, bot: Bot, client):
     async def new_member_handler(update: types.ChatJoinRequest):
         print('here')
         user_id = update.from_user.id
-        users_to_kick = get_users_to_kick()
+        iter_participants = client.iter_participants(gandoniy_chat)
+        users_to_kick = [participant.id async for participant in iter_participants]
+        update_users_to_kick(users_to_kick)
         f = True
         if user_id in black_list:
             await bot.kick_chat_member(chat_id=zaebis_chat, user_id=user_id, revoke_messages=True)
@@ -81,3 +83,4 @@ async def kick_member(chat_id, user_id, bot: Bot, send_message: bool = True):
 async def ban_member(chat_id, user_id, bot: Bot):
     await bot.send_message(user_id, texts['message_if_banned'])
     await bot.kick_chat_member(chat_id, user_id)
+
