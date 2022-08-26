@@ -17,6 +17,7 @@ from telethon import TelegramClient, events
 from telethon.tl.types import MessageActionChatJoinedByLink, MessageActionChatAddUser, MessageActionChatDeleteUser, \
     UpdateShortMessage, InputPeerChat
 from bot.filter_new_members import register_new_participant_handler, kick_member, ban_member
+from bot.anti_spam import register_anti_spam_handler
 from cons_and_vars.vars import zaebis_chat, gandoniy_chat, users_to_kick, users_to_ban, update_users_to_kick
 
 
@@ -50,6 +51,7 @@ if __name__ == "__main__":
     dp = Dispatcher(bot, storage=storage)
     dp.middleware.setup(LoggingMiddleware())
     register_new_participant_handler(dp, bot, client)
+    register_anti_spam_handler(dp, bot)
 
     client.start()
     print(2)
