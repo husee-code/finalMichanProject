@@ -53,7 +53,7 @@ def register_new_participant_handler(dp: Dispatcher, bot: Bot, client):
             await bot.kick_chat_member(chat_id=zaebis_chat, user_id=user_id, revoke_messages=True)
             await bot.send_message(user_id, texts["message_to_banned"])
             f = False
-        print(f'{users_to_kick = }')
+        
         if user_id in users_to_kick:
             if user_id in users_to_ban:
                 await bot.kick_chat_member(zaebis_chat, user_id)
